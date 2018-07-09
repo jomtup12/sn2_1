@@ -1,0 +1,115 @@
+<form [(ngSwitch)]="currentPage" >
+<ion-list *ngSwitchCase="'page4'">
+  <p><button ion-button round outline style="font-size: 23px">ชื่อสถานประกอบการ/หน่วยงาน</button></p>
+  
+  <ion-item>
+      <ion-input placeholder="ชื่อสถานประกอบการ/หน่วยงาน" style="background-color:whitesmoke;color: black"></ion-input>
+  </ion-item>
+  <ion-grid style="border:solid #555">
+      <ion-row>
+            <p><button ion-button round outline  color="secondary" style="font-size: 15px" >โทรศัพท์ </button></p>
+          <ion-col>
+            <ion-input placeholder="เบอร์โทร" style="background-color:whitesmoke;color: black;font-size: 15px" ></ion-input>
+          </ion-col>
+            <p><button ion-button round outline color="secondary" style="font-size: 15px">โทรสาร </button></p>
+          <ion-col>
+            <ion-input placeholder="หมายเลข" style="background-color:whitesmoke;color: black;font-size: 15px" ></ion-input>
+          </ion-col>
+       </ion-row>
+        <ion-row>
+          <p><button ion-button round outline color="secondary" style="font-size: 15px">E-mail </button></p>
+            <ion-col>
+                <ion-input placeholder="@gmail.com" style="background-color:whitesmoke;color: black;font-size: 15px" ></ion-input>
+            </ion-col>
+            <p><button ion-button round outline color="secondary" style="font-size: 15px">Website </button></p>
+            <ion-col>
+                <ion-input placeholder="xxx.com" style="background-color:whitesmoke;color: black;font-size: 15px" ></ion-input>
+            </ion-col>
+        </ion-row>
+  </ion-grid>
+  <br>
+  <p><button ion-button round outline style="font-size: 23px">ชื่อผู้ให้ข้อมูล</button></p>          
+<ion-item>
+<ion-select [(ngModel)]="os" submitText="OK" cancelText="Cancle"  placeholder="คำนำหน้าชื่อ" style="font-size: 15px">
+<ion-option value="นาย1" style="font-size: 15px">นาย</ion-option>
+<ion-option value="นาง1" style="font-size: 15px">นาง</ion-option>
+<ion-option value="นางสาว1" style="font-size: 15px">นางสาว</ion-option>
+</ion-select>
+<ion-input placeholder="ชื่อ1" style="background-color:whitesmoke;color: black;font-size: 15px" ></ion-input>
+<ion-input placeholder="นามสกุล1" style="background-color:whitesmoke;color: black;font-size: 15px" ></ion-input>
+</ion-item>
+<br>
+<p><button ion-button round outline style="font-size: 23px">ตำแหน่ง</button></p>
+<ion-item>
+<ion-input placeholder="ตำแหน่ง" style="background-color:whitesmoke;color: black"></ion-input>
+</ion-item>
+<br>
+<p><button ion-button round outline style="font-size: 23px">สถานประกอบการแห่งนี้ให้บริการในลักษณะใด (ระบุบริการหลักที่ทำ)</button></p>
+<ion-item>
+<ion-input placeholder="สถานประกอบการแห่งนี้ให้บริการในลักษณะใด" style="background-color:whitesmoke;color: black"></ion-input>
+</ion-item>
+<br>
+<p><button ion-button round outline style="font-size: 23px">ประเภทสถานประกอบบริการ</button></p>
+<ion-item>
+  <ion-select  interface="popover" placeholder="กรุณาเลือก" interface="action-sheet" cancelText="ยกเลิก"
+    style="background-color:whitesmoke;color: black;margin-left:15px">
+    <ion-option [value]=1>1.การก่อสร้างอาคาร</ion-option>
+    <ion-option [value]=2>2.งานวิศวกรรมโยธา</ion-option>
+    <ion-option [value]=3>3.งานก่อสร้างเฉพาะงาน</ion-option>
+    <ion-option [value]=4>4.การขายส่งและการขายปลีก  การซ่อมยานยนต์และจักรยานยนต์</ion-option>
+    <ion-option [value]=5>5.การขายส่ง  (ยกเว้นยานยนต์และจักรยานยนต์)</ion-option>
+    <ion-option [value]=6>6.การขายปลีก  (ยกเว้นยานยนต์และจักรยานยนต์)</ion-option>
+  </ion-select>
+</ion-item>
+<br>
+<p><button ion-button round outline style="font-size: 23px">ประเภทสถานประกอบการผลิต </button></p>
+<ion-grid style="border:dimgrey">
+<ion-row>
+  <h5 style="margin: 20px">มีจำนวนบุคลากร/คนทำงานรวมทั้งหมดกี่คน</h5>
+  <ion-input placeholder="มีจำนวนบุคลากร/คนทำงานรวมทั้งหมดกี่คน" style="background-color:whitesmoke;color: black;margin: 10px"></ion-input>
+ </ion-row>
+</ion-grid>
+
+  <p><button ion-button round outline style="font-size: 23px">สถานประกอบการแห่งนี้ใช้น้ำจากแหล่งใดบ้าง</button></p>
+  <h3>  1.เพื่อการอุปโภคบริโภค: สถานที่นี้มีผู้อาศัยติดต่อกันนานเกิน 3 เดือน ใช่หรือไม่</h3>
+  <ion-item>
+      <ion-label>1.น้ำประปา</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+    <ion-label>2.น้ำบาดาล</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+
+  <ion-item>
+      <ion-label>3.น้ำจากสระน้ำ</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+    <ion-label>4.น้ำจากแม่น้ำ/ลำคลอง/แหล่งน้ำสาธารณะ</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+   
+  <ion-item>
+      <ion-label>5.น้ำจากชลประทาน</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+    <ion-label>6.น้ำฝนที่กักเก็บ</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+ 
+  <ion-item>
+      <ion-label>7.น้ำที่ซื้อมาใช้</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+    <ion-label>อื่นๆ</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+    <br>
+    <ion-buttons text-center>
+      <button ion-button type="submit" large round >ถัดไป ></button>
+    </ion-buttons>
+</ion-list>
+</form>
