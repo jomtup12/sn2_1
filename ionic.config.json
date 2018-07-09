@@ -1,0 +1,8 @@
+{
+  "name": "sn2-1",
+  "app_id": "b595adea",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
