@@ -1,14 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+
+  <ion-navbar color="primary">
+    <ion-title style="text-align:center; color:red ">
+      แบบบันทึกการนับจด สน.2-1
     </ion-title>
   </ion-navbar>
+  <ion-toolbar no-border-top color="primary">
+    <ion-segment [(ngModel)]="currentPage">
+      <ion-segment-button value="page1">
+        หน้าที่ 1
+      </ion-segment-button>
+      <ion-segment-button value="page2" [disabled]="!isSec2Enable">
+        หน้าที่ 2
+      </ion-segment-button>
+      <ion-segment-button value="page3" [disabled]="!isSec3Enable">
+        หน้าที่ 3
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster. testtesttest
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <sn2-1sec1></sn2-1sec1>
 </ion-content>

@@ -7,6 +7,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  currentPage: string = "page1";
+  isSec1Enable:boolean 
+  isSec2Enable:boolean
+  isSec3Enable:boolean
+
   constructor(public navCtrl: NavController) {
 
   }
