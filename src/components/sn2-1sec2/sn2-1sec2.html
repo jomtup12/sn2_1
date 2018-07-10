@@ -13,7 +13,7 @@
   </ion-col>
   <ion-col>
     <ion-item no-lines>
-      <ion-radio item-left [value]=false></ion-radio>
+      <ion-radio item-left [value]=false (ionSelect)="resetForm() "></ion-radio>
       <ion-label>2. ไม่ปลูก</ion-label>
     </ion-item>
   </ion-col>
@@ -26,21 +26,25 @@
     <label id="bold">2.1.2 ถ้า "ปลูกข้าว" มีแปลงนาจำนวนกี่แปลง </label>
   </ion-label>
 </ion-item>
-<ion-input type="number" placeholder="จำนวนแปลง" formControlName="s2" (change)="pushToArray(sec2Form.get('s2').value)"></ion-input>
+<ion-input type="number" placeholder="จำนวนแปลง" formControlName="s2"  (ionChange)="pushToArray(sec2Form.get('s2').value)"></ion-input>
 </div>
 
-<div *ngIf="sec2Form.get('s2').value > 0">
-<ion-segment  *ngIf="sec2Form.get('s2Data').controls" formControlName="cPage" >
+<div *ngIf="sec2Form.get('s2').value > 0 && sec2Form.get('s1').value==true">
+<ion-segment   formControlName="cPage" >
 
-  <ion-segment-button    *ngFor="let s2 of sec2Form.get('s2Data').controls; let i=index" (tap)="changeMenus1(i)"   [value]="i+1">
-    {{i+1}}
+    <ion-segment-button  [value]="1" >
+        1
+      </ion-segment-button>
+  <ion-segment-button  *ngFor="let s2 of sec2Form.get('s2Data').controls | slice:1; let i=index" (tap)="changeMenus1(i)"   [value]="i+2" >
+    {{i+2}}
   </ion-segment-button>
   
 </ion-segment>
-  <div formArrayName="s2Data">
- <ion-row col-12 *ngFor="let s2 of sec2Form.get('s2Data').controls; let i=index" [formGroupName]="i">
-    <ion-col  *ngIf="i+1==sec2Form.get('cPage').value">
+  <ion-grid formArrayName="s2Data" style="text-align:center;" no-padding>
+ <ion-row col-12 *ngFor="let s2 of sec2Form.get('s2Data').controls ; let i=index" [formGroupName]="i" style="padding:0px;margin:0px">
+    <ion-col  *ngIf="i+1==sec2Form.get('cPage').value" style="border:2px solid black;padding:15px;margin:0px">
  <h3>แปลงที่ {{i+1}}</h3>
+
         <ion-item>
         <ion-label>
           <label id="bold">2. ขนาดพื้นที่เท่าไร กี่ไร่ กี่งาน กี่ตารางวา</label>
@@ -80,7 +84,7 @@
         <ion-row>
             <ion-col col-6>
               <ion-input type="number" placeholder="กรุณากรอกข้อมูล ในรอบ 12 เดือนที่ผ่านมาใช้พื้นที่นี้ทำนากี่ครั้ง" 
-              formControlName="s2_6" (change)="pushToSubArray(i,sec2Form.controls.s2Data.controls[i].controls.s2_6.value)"
+              formControlName="s2_6" (ionChange)="pushToSubArray(i,sec2Form.controls.s2Data.controls[i].controls.s2_6.value)"
                ></ion-input>
             </ion-col>
             <ion-col col-6>
@@ -170,7 +174,7 @@
           <div formArrayName="s2_4">
               <ion-row col-12 *ngFor="let s2Sub of sec2Form.get(['s2Data',i,'s2_4']).controls; let y=index" [formGroupName]="y">
             
-              <ion-col col-12 >
+              <ion-col col-12 style="border:1px solid gray;padding-bottom:12px">
                 <h2>ครั้งที่ {{y+1}}</h2>
                 <ion-item>
                     <ion-label>
@@ -194,7 +198,7 @@
        
     </ion-col>
   </ion-row>
-</div>
+</ion-grid>
 
 </div>
 </form>
