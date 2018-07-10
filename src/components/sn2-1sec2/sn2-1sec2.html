@@ -41,7 +41,6 @@
  <ion-row col-12 *ngFor="let s2 of sec2Form.get('s2Data').controls; let i=index" [formGroupName]="i">
     <ion-col  *ngIf="i+1==sec2Form.get('cPage').value">
  <h3>แปลงที่ {{i+1}}</h3>
- {{sec2Form.value | json}}
         <ion-item>
         <ion-label>
           <label id="bold">2. ขนาดพื้นที่เท่าไร กี่ไร่ กี่งาน กี่ตารางวา</label>
