@@ -1,8 +1,8 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title style="text-align:center; color:red ">
-      แบบบันทึกการนับจด สน.2-1
+    <ion-title style="text-align:center">
+      <div style="color:black">แบบบันทึกการนับจด สน.2-1</div>
     </ion-title>
   </ion-navbar>
   <ion-toolbar no-border-top color="primary">
@@ -10,31 +10,46 @@
       <ion-segment-button value="page1">
         หน้าที่ 1
       </ion-segment-button>
-      <ion-segment-button value="page2" [disabled]="!isSec2Enable">
+      <ion-segment-button value="page2" >
         หน้าที่ 2
       </ion-segment-button>
-      <ion-segment-button value="page3" [disabled]="!isSec3Enable">
+      <ion-segment-button value="page3" >
         หน้าที่ 3
       </ion-segment-button>
-<<<<<<< HEAD
-      <ion-segment-button value="page4" [disabled]="!isSec3Enable">
+      <ion-segment-button value="page4" >
         หน้าที่ 4
       </ion-segment-button>
-=======
-      <ion-segment-button value="page4" [disabled]="!isSec4Enable">
-        หน้าที่ 4
-      </ion-segment-button>
-      <ion-segment-button value="page5" [disabled]="!isSec5Enable">
+      <ion-segment-button value="page5" >
         หน้าที่ 5
       </ion-segment-button>
-      <ion-segment-button value="page6" [disabled]="!isSec6Enable">
+      <ion-segment-button value="page6" >
         หน้าที่ 6
       </ion-segment-button>
->>>>>>> ADD secment TO page home
+
     </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <sn2-1sec1></sn2-1sec1>
+    <div  [ngSwitch]="true">
+          
+        <ion-list *ngSwitchCase="currentPage==='page1'">
+       
+        </ion-list>
+     
+      
+        <ion-list *ngSwitchCase="currentPage==='page2'">
+            <sn2-1sec2></sn2-1sec2>
+        </ion-list>
+      
+     
+        <ion-list *ngSwitchCase="currentPage==='page3'" >
+        </ion-list>
+
+        <ion-list *ngSwitchCase="currentPage==='pageภ'">
+          </ion-list>
+     
+    </div>
+  
+  
 </ion-content>
